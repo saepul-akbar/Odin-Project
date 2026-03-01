@@ -1,0 +1,35 @@
+body {
+    display: flex;
+    flex-direction: column; /* Mengatur elemen (h1 dan grid) agar berjejer ke bawah */
+    align-items: center;    /* Mengetengahkan elemen secara horizontal ↔️ */
+    justify-content: center; /* Mengetengahkan elemen secara vertikal ↕️ */
+    min-height: 100vh;      /* Memastikan body setinggi layar monitor */
+    margin: 0;              /* Menghapus margin bawaan browser */
+}
+
+h1 {
+    text-align: center;     /* Memastikan teks di dalam h1 ada di tengah */
+    margin-bottom: 20px;    /* Memberi jarak antara judul dan grid agar tidak menempel */
+    font-family: sans-serif;
+}
+
+#container {
+    display: flex;       /* Mengaktifkan Flexbox 🧱 */
+    flex-wrap: wrap;     /* Supaya kalau sudah penuh, pindah ke baris baru 🔄 */
+    width: 500px;        /* Ukuran wadah tetap agar mudah dihitung 📏 */
+    height: 500px;
+    border: 2px solid black;
+    margin: 0 auto;      /* Agar kontainer berada di tengah halaman 📍 */
+}
+
+.div-child {
+    /* Jika kontainer 500px, maka 500 / 16 = 31.25px */
+    width: 31.25px; 
+    height: 31.25px;
+    border: 0.1px solid #eee; /* Beri garis tipis agar terlihat gridnya */
+    box-sizing: border-box;    /* Penting agar border tidak menambah ukuran kotak */
+}
+
+.div-child:hover {
+    background-color: crimson;
+}
