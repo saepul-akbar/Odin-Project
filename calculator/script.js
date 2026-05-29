@@ -22,12 +22,12 @@ function setOperator(operator) {
 }
 
 function calculate() {
-    secondValue = display.value;
+    const val1 = parseFloat(firstValue);
+    const val2 = parseFloat(display.value);
 
-    const result = operate(currentOperator, parseFloat(firstValue), parseFloat(secondValue));
+    const result = operate(currentOperator, val1, val2);
 
     display.value = result;
-
     isResetDisplay = true;
 }
 
