@@ -49,15 +49,14 @@
         }
 
         function setOperator(operator) {
-            firstValue = display.value;
+            firstValue = parseFloat(display.value);
             currentOperator = operator
 
             isResetDisplay = false;
         }
 
         function calculate() {
-            const val1 = parseFloat(firstValue);
-            const val2 = parseFloat(display.value);
+            let secondValue = parseFloat(display.value);
 
             const result = operate(currentOperator, val1, val2);
 
@@ -93,6 +92,7 @@
         }
 
         function operate(operator, a, b) {
+            console.log("Debug:", a, typeof a, operator, b, typeof b); // Ini akan muncul di console browser
             switch (operator) {
                 case '+':
                     return add(a, b) ;
