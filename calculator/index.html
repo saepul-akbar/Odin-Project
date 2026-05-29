@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+</head>
+<body>
+    <div class="calculator">
+        <input type="text" id="display" disabled value="0">
+
+        <div class="buttons">
+            <button onclick="clearResult()">C</button>
+            <button onclick="appendNumber('7')">7</button>
+            <button onclick="appendNumber('8')">8</button>
+            <button onclick="appendNumber('9')">9</button>
+            <button onclick="setOperator('/')">/</button>
+
+            <button onclick="appendNumber('4')">4</button>
+            <button onclick="appendNumber('5')">5</button>
+            <button onclick="appendNumber('6')">6</button>
+            <button onclick="setOperator('*')">*</button>
+
+            <button onclick="appendNumber('1')">1</button>
+            <button onclick="appendNumber('2')">2</button>
+            <button onclick="appendNumber('3')">3</button>
+            <button onclick="setOperator('-')">-</button>
+
+            <button onclick="appendNumber('0')">0</button>
+            <button onclick="calculate()">=</button>
+            <button onclick="setOperator('+')">+</button>
+        </div>
+    </div>
+    <script src="script.js">
+        let firstValue = '';
+        let currentOperator = '';
+        let secondValue = '';
+        let isResetDisplay = false; 
+
+        const display = document.getElementById('display');
+
+        function appendNumber(number) {
+            if (display.value === 0 || isResetDisplay){
+                display.value = number;
+                isResetDisplay = false;
+            } else {
+                display.value += number;
+            }
+        }
+
+        function setOperator(operator) {
+            firstValue = display.value;
+            currentOperator = operator
+
+            isResetDisplay = false;
+        }
+
+        function calculate() {
+            secondValue = display.value;
+
+            const result = operate(currentOperator, parseFloat(firstValue), parseFloat(secondValue));
+
+            display.value = result;
+
+            isResetDisplay = true;
+        }
+
+        function clearCalculate() {
+            display.value = 0;
+            firstValue = '';
+            currentOperator = '';
+            secondValue = '';
+            isResetDisplay = false;
+        }
+
+        function add(a, b) {
+            return a + b
+        }
+
+        function subtract(a, b) {
+            return a - b
+        }
+
+        function multiply(a, b) {
+            return a * b
+        }
+
+        function divide(a, b) {
+            if (b === 0) {
+                return console.log("Tidak bisa dibagi nol!")
+            }    
+            return a / b
+        }
+
+        function operate(operator, a, b) {
+            switch (operator) {
+                case '+':
+                    return add(a, b) ;
+                case '-':
+                    return subtract(a, b);
+                case '*':
+                    return multiply(a, b);
+                case '/':
+                    return divide(a, b);
+                default:
+                    return null;
+            }
+        }
+    </script>
+</body>
+</html>
