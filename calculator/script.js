@@ -15,17 +15,17 @@ document.addEventListener("DOMContentLoaded", function(){
     let previousScreen = document.querySelector(".previous")
     let currentScreen = document.querySelector(".current")
 
-    number.forEach(button => {
-        button.addEventListener("click", () => {
-            if (displayValue === '0' || isResetDisplay) {
-                displayValue = button.textContent;
-                isResetDisplay = false;
-            } else {
-                displayValue += button.textContent;
-            }
-            currentScreen.textContent = displayValue;
-        });
+number.forEach(button => {
+    button.addEventListener("click", () => {
+        if (displayValue === '0' || isResetDisplay) {
+            displayValue = button.textContent;
+            isResetDisplay = false;
+        } else {
+            displayValue += button.textContent;
+        }
+        currentScreen.textContent = displayValue;
     });
+});
 
 
 operator.forEach(button => {
