@@ -1,0 +1,80 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+}
+
+.btn {
+    height: 75px !important;
+    width: 75px !important;
+    margin: 15px !important;
+    font-size: 40px !important;
+}
+
+.btn.number {
+    border: 1px solid greenyellow;
+    border-radius: 10px;
+}
+
+.btn.number:hover {
+    background-color: green;
+}
+
+.btn.operator {
+    border: 1px solid steelblue;
+    border-radius: 10px;
+}
+
+.btn.operator:hover {
+    background-color: blue;
+}
+
+.btn.decimal {
+    border: 1px solid gold;
+    border-radius: 10px;
+}
+
+.btn.decimal:hover {
+    background-color: yellow;
+}
+
+.btn.equal {
+    border: 1px solid palevioletred;
+    border-radius: 10px;
+}
+
+.btn.equal:hover {
+    background-color: pink;
+}
+
+.btn.clear {
+    border: 1px solid purple;
+    border-radius: 10px;
+}
+
+.first-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.screen {
+    width: 325px;
+    border: 1px solid salmon;
+    height: 75px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+.previous {
+    font-size: 20px;
+}
+
+.current {
+    font-size: 30px;
+}
